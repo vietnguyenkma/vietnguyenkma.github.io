@@ -709,3 +709,6 @@ h3.my-profession{
         max-width: 100%;
     }
 }
+.fa-heart{
+    color: var(--skin-color);
+}
