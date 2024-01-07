@@ -416,5 +416,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.16/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./js/style-switcher.js"></script>
     <script src="./js/script.js"></script>
+    <script>
+        function submitForm() {
+            // Get form data
+            var formData = new FormData(document.getElementById("myForm"));
+        
+            // Send data to PHP script using AJAX
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "./php/process_form.php", true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Handle the response from the PHP script if needed
+                    console.log(xhr.responseText);
+                }
+            };
+            xhr.send(formData);
+        }
+        </script>
 </body>
 </html>
